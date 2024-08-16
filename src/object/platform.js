@@ -1,15 +1,17 @@
 class GEOPlatform extends GEO {
+    static t = "platform";
+
     constructor(game) {
         super(game);
-        this.type = "platform";
-        this.width = 100;
-        this.height = 20;
+        this.t = GEOPlatform.t;
+        this.w = 100;
+        this.h = 20;
         this.color = "white";
     }
 
     draw(ctx) {
         ctx.fillStyle = this.color;
-        ctx.fillRect(this.cx - this.wh, this.cy - this.hh, this.width, this.height);
+        ctx.fillRect(this.cx - this.wh, this.cy - this.hh, this.w, this.h);
     }
 
     /**
@@ -32,10 +34,10 @@ class GEOPlatform extends GEO {
             platform.y = y;
         }
         if (width !== undefined) {
-            platform.width = width;
+            platform.w = width;
         }
         if (height !== undefined) {
-            platform.height = height;
+            platform.h = height;
         }
         if (color !== undefined) {
             platform.color = color;
